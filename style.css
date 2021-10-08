@@ -1,0 +1,26 @@
+body {
+  font-family: "Indie Flower", cursive;
+  text-align: center;
+  font-size: 2em;
+  background: #fffdd0;
+}
+
+.button,
+#restartButton {
+  border-radius: 50%;
+  border: none;
+  background-repeat: no-repeat;
+  background: #fffdd0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.button:hover,
+#restartButton:hover {
+  transform: scale(1.2);
+}
+
+#restartButton {
+  font-family: "Indie Flower", cursive;
+  font-size: 1em;
+}
