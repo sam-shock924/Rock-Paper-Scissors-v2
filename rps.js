@@ -1,24 +1,24 @@
 const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
-const gameOutcome = document.getElementById('gameOutcome');
+const outcomeResponse = document.getElementById('gameOutcome');
+const restartButton = document.getElementById('restartButton');
 
 
 rockButton.addEventListener('click', () => {
-    gameOutcome.innerText = "Rock button pressed!"
+    outcomeResponse.innerText = "Rock button pressed!"
 })
-
-
 
 paperButton.addEventListener('click', () => {
-    gameOutcome.innerText = "Paper button pressed!"
+    outcomeResponse.innerText = "Paper button pressed!"
 })
 
-
-
-
 scissorsButton.addEventListener('click', () => {
-    gameOutcome.innerText = "Scissors button pressed!"
+    outcomeResponse.innerText = "Scissors button pressed!"
+})
+
+restartButton.addEventListener('click', () => {
+    outcomeResponse.innerText = "";
 })
 //lose function
 
