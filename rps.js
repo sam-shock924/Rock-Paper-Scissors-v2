@@ -3,11 +3,12 @@ const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
 const outcomeResponse = document.getElementById('gameOutcome');
 const restartButton = document.getElementById('restartButton');
+const choices = ['rock', 'paper', 'scissors'];
 let userChoice = '';
-let computerChoice = Math.floor(Math.random() * 3) +1;
-const rock = 1;
-const paper = 2;
-const scissors = 3;
+let computerChoice = Math.floor(Math.random() * 3) + 1;
+// const rock = '1';
+// const paper = '2';
+// const scissors = '3';
 console.log(computerChoice);
 
 
