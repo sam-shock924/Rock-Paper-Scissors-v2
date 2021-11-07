@@ -1,50 +1,56 @@
-const rockButton = document.getElementById('rock');
-const paperButton = document.getElementById('paper');
-const scissorsButton = document.getElementById('scissors');
+const optionButton = document.querySelectorAll('.button').forEach(item => {
+    item.addEventListener('click', e => {
+        userChoice = e.target.id
+    })
+  });
+
 const outcomeResponse = document.getElementById('gameOutcome');
 const restartButton = document.getElementById('restartButton');
-const choices = ['rock', 'paper', 'scissors'];
 let userChoice = '';
-let computerChoice = Math.floor(Math.random() * 3) + 1;
-// const rock = '1';
-// const paper = '2';
-// const scissors = '3';
-console.log(computerChoice);
 
+function computerChoice() {
+    const choices = ['rock','paper','scissors'];
+    const randomChoice  = Math.floor(Math.random() * 3);
+    return choices[randomChoice];
+}
 
-rockButton.addEventListener('click', e => {
-    userChoice = e.target.id
-    // console.log(computerChoice);
-    computerChoice = e.target.id
-    // outcomeResponse.innerText = "Rock button pressed!"
-})
+function game(userChoice) {
+    const compChoice = ComputerChoice();
+    switch (userChoice + compChoice) {
+        case "rockscissors":
+        case "paperrock":
+        case "scissorspaper":
+            win(userChoice, compChoice);
+            break;
+        case "scissorsrock":
+        case "rockpaper":
+        case "paperscissors":
+            lose(userChoice, compChoice);
+            break;
+        case "rockrock":
+        case "paperpaper":
+        case "scissorsscissors":
+            draw(userChoice, compChoice);
+            break; 
+    }
+}
 
-paperButton.addEventListener('click', e => {
-    userChoice = e.target.id
-    // outcomeResponse.innerText = "Paper button pressed!"
-})
+function changeCase(items) {
+    if (items === "rock") return "Rock";
+    if (items === "paper") return "Paper";
+    return "Scissors";
+}
 
-scissorsButton.addEventListener('click', e => {
-    userChoice = e.target.id
-    // outcomeResponse.innerText = "Scissors button pressed!"
-})
+function win(userChoice, compChoice) {
+    outcomeResponse.innerText = changeCase(userChoice) + " beats " + changeCase(compChoice) + ". " + "Nice!"
+}
 
-restartButton.addEventListener('click', () => {
-    outcomeResponse.innerText = "";
-})
-//lose function
+function lose(userChoice, compChoice) {
+    outcomeResponse.innerText = changeCase(userChoice) + " defeats " + changeCase(compChoice) + ". " + "AI wins!"
 
-//outcome
+}
+function draw(userChoice, compChoice) {
+    outcomeResponse.innerText = "It's a draw!"
 
-//plan:
+}    
 
-/*user presses rock, paper, or scissors button
-    save user choice in a variable 
-computer chooses rock, paper, or scissors
-    randomly choice one of three options 
-    save the computer choice 
-
-which option beats what?
-display winning outcome to user
-user can play again
-*/
