@@ -1,9 +1,3 @@
-const optionButton = document.querySelectorAll('.button').forEach(item => {
-    item.addEventListener('click', e => {
-        userChoice = e.target.id
-    })
-  });
-
 const outcomeResponse = document.getElementById('gameOutcome');
 const restartButton = document.getElementById('restartButton');
 let userChoice = '';
@@ -53,4 +47,11 @@ function draw(userChoice, compChoice) {
     outcomeResponse.innerText = "It's a draw!"
 
 }    
+
+const optionButton = document.querySelectorAll('.button').forEach(item => {
+    item.addEventListener('click', e => {
+        userChoice = e.target.id
+        game(userChoice);
+    })
+  });
 
