@@ -1,5 +1,7 @@
 const outcomeResponse = document.getElementById('gameOutcome');
 const restartButton = document.getElementById('restartButton');
+let userScore = document.getElementById('userScore');
+let compScore = document.getElementById('compScore');
 let userChoice = '';
 
 function computerChoice() {
@@ -9,7 +11,7 @@ function computerChoice() {
 }
 
 function game(userChoice) {
-    const compChoice = ComputerChoice();
+    const compChoice = computerChoice();
     switch (userChoice + compChoice) {
         case "rockscissors":
         case "paperrock":
@@ -37,15 +39,16 @@ function changeCase(items) {
 
 function win(userChoice, compChoice) {
     outcomeResponse.innerText = changeCase(userChoice) + " beats " + changeCase(compChoice) + ". " + "Nice!"
+    return ++userScore;
 }
 
 function lose(userChoice, compChoice) {
     outcomeResponse.innerText = changeCase(userChoice) + " defeats " + changeCase(compChoice) + ". " + "AI wins!"
-
+    return ++compScore;
 }
+
 function draw(userChoice, compChoice) {
     outcomeResponse.innerText = "It's a draw!"
-
 }    
 
 const optionButton = document.querySelectorAll('.button').forEach(item => {
