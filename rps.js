@@ -1,8 +1,10 @@
 const outcomeResponse = document.getElementById('gameOutcome');
 const restartButton = document.getElementById('restartButton');
-let userScore = document.getElementById('userScore');
-let compScore = document.getElementById('compScore');
+let userScoreDisplay = document.getElementById('userScore');
+let compScoreDisplay = document.getElementById('compScore');
 let userChoice = '';
+let userScore = 0;
+let compScore = 0;
 
 function computerChoice() {
     const choices = ['rock','paper','scissors'];
@@ -38,13 +40,16 @@ function changeCase(items) {
 }
 
 function win(userChoice, compChoice) {
-    outcomeResponse.innerText = changeCase(userChoice) + " beats " + changeCase(compChoice) + ". " + "Nice!"
-    return ++userScore;
+    outcomeResponse.innerText = `${changeCase(userChoice)} beats ${changeCase(compChoice)}. Nice!`
+    userScore++;
+    userScoreDisplay.textContent = userScore;
 }
 
 function lose(userChoice, compChoice) {
-    outcomeResponse.innerText = changeCase(userChoice) + " defeats " + changeCase(compChoice) + ". " + "AI wins!"
-    return ++compScore;
+    outcomeResponse.innerText = `${changeCase(userChoice)} beats ${changeCase(compChoice)}. AI wins!`
+    compScore++;
+    compScoreDisplay.textContent = compScore;
+
 }
 
 function draw(userChoice, compChoice) {
