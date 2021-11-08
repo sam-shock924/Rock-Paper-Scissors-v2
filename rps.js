@@ -58,3 +58,6 @@ const optionButton = document.querySelectorAll('.button').forEach(item => {
     })
   });
 
+restartButton.addEventListener('click', () => {
+    outcomeResponse.innerText = '';
+})
