@@ -49,7 +49,6 @@ function lose(userChoice, compChoice) {
     outcomeResponse.innerText = `${changeCase(userChoice)} beats ${changeCase(compChoice)}. AI wins!`
     compScore++;
     compScoreDisplay.textContent = compScore;
-
 }
 
 function draw(userChoice, compChoice) {
