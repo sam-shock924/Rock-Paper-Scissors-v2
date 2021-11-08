@@ -1,7 +1,7 @@
 body {
   font-family: "Indie Flower", cursive;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   background: #fffdd0;
 }
 
@@ -23,4 +23,8 @@ body {
 #restartButton {
   font-family: "Indie Flower", cursive;
   font-size: 1em;
+}
+
+#scoreboard {
+  margin: auto;
 }
